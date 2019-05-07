@@ -1,0 +1,16 @@
+Fibonacci Trace
+
+fibonacci(6)
+fobonacci (5) + fibonacci(4)
+fibonacci (4) + fibonacci (3) + fibonacci(3) + fibonacci(2)
+fibonacci(3) + fibonacci(2) + fibonacci(2) + fibonacci(1) + fibonacci(2) + fibonacci(1) + 1
+fibonacci(2) + fibonacci(1) + 1 + 1 + 1 + 1 + 1 + 1
+1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 8
+
+fibonacci(7)
+fibonacci(6) + fibonacci(5)
+fibonacci(5) + fibonacci(4) + fibonacci(4) + fibonacci(3)
+fibonacci(4) + fibonacci(3) + fibonacci(3) + fibonacci(2) + fibonacci(3) + fibonacci(2) + fibonacci(2) + fibonacci(1)
+fibonacci(3) + fibonacci(2) + fibonacci(2) + fibonacci(1) + fibonacci(2) + fibonacci(1) + 1 + fibonacci(2) + fibonacci(1) + 1 + 1 + 1
+fibonacci(2) + fibonacci(1) + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1
+1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 13

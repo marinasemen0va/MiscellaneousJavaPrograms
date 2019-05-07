@@ -1,0 +1,342 @@
+public class GroceryStore extends Store //subclass of the superclass Store called GroceryStore
+{
+  //instance variable declaration statements
+  private int aisles;
+  private int freezers;
+  private int inventoryFull;
+  private int fresh;
+  private boolean liveAnimals;
+  private boolean bakery;
+  private String bestSeller;
+  private int numberOfProducts;
+  
+  public GroceryStore () //first constructor with no parameters
+  {
+    aisles=20; //sets the variable aisles to a default value of 20
+    freezers=5; //sets the variable freezers to a default value of 5
+    inventoryFull=8; //sets the variable inventoryFull to a default value of 8
+    fresh=9; //sets the variable fresh to a default value of 9
+    liveAnimals=false; //sets the variable liveAnimals to a default value of false
+    bakery=true; //sets the variable bakery to a default value of true
+    bestSeller="Milk"; //sets the variable bestSeller to a default value of Milk
+    numberOfProducts=10000; //sets the variable numberOfProducts to a default value of 10000
+  }
+  public GroceryStore(String n, String sl){ //second constructor with parameters for the name and the location of the store
+       aisles=20; //sets the number of aisles to a default value of 20
+       freezers=5; //sets the number of freezers to a default value of 5
+       inventoryFull=8; //sets the number for inventoryFull to a default value of 8
+       fresh=9; //sets the number for fresh to a default value of 9
+       liveAnimals=false; //sets the variable liveAnimals to a default value of false
+       bakery=true; //sets the variable bakery to a default value of true
+       bestSeller="Milk"; //sets the variable bestSeller to a default value of Milk
+       numberOfProducts=10000; //sets the number of products to a default value of 10000
+       setName(n); //sets the variable setName to n
+       setArea(60,60); //sets the length and width to a default value of 60
+       setConnected(false); //sets the parameter of setConnected to a default value of false
+       setEmployees(15); //sets the parameter of setEmployees to a default value of 15
+       setFloorNumber(1); //sets the parameter of setFloorNumber to a default value of 1
+       setManager("Stacey"); //sets the parameter of setManager to a default value to Stacey
+       setCleanliness(7); //sets the parameter of setCleanliness to a default value of 7
+       setParkingSpaces(50); //sets the parameter of setParkingSpaces to a default value of 50
+       setStreetLocation(sl); //sets the parameter of setStreetLocation to sl
+       setRegisters(4); //sets the parameter of setRegisters to a default value of 4
+       calcRevenue(500000, 300000); //sets the parameters of calcRevenue to a default value of 500000 and 300000
+   }
+   public GroceryStore (int a, int f, int iF, int fr, boolean lA, boolean b, String bS, int p, String n, double l, double w, boolean c,int e, int fn, String m, int cl, int ps, String sl, int r, double in, double out) //third constructor with all possible parameters
+   {
+       if (a <= 0) //error traps if the amount of aisles is less than or equal to 0
+       {
+           System.out.println ("Invalid amount of aisles. There are now 5 aisles.");
+           aisles = 5; //sets the default value to 5
+       }
+       else //otherwise sets the number of aisles to a
+       {
+           aisles = a;
+       }
+       if (f < 0)//error traps if the number of freezers is less than 0
+       {
+           System.out.println ("Invalid amount of freezers. There are now 3 freezers.");
+           freezers = 3; //sets the default value to 3
+       }
+       else //otherwise sets the number of freezers to f
+       {
+           freezers = f;
+       }
+       if (iF>10||iF<=0) //error traps if the inventoryFull rating is not between 1-10
+       {
+           System.out.println ("Number isn't 1-10. \"inventoryFull\" value is 5.");
+           inventoryFull = 5; //sets the default value to 5
+       }
+       else //otherwise sets the inventoryFull variable to iF
+       {
+           inventoryFull = iF;
+       }
+       if (fr>10||fr<=0) //error traps if the fresh rating is not between 1-10
+       {
+           System.out.println ("Number isn't 1-10. \"fresh\" value is 8.");
+           fresh = 8; //sets the default value to 8
+       }
+       else //otherwise sets the variable fresh to fr
+       {
+           fresh = fr;
+       }
+       liveAnimals=lA; //sets the variable liveAnimals to lA
+       bakery=b; //sets the variable bakery to b
+       bestSeller=bS; //sets the variable bestSeller to bS
+       if (p <= 0) //error traps if the amount of products is less than or equal to 0
+       {
+           System.out.println ("Invalid amount of products. There are now 1000 products.");
+           numberOfProducts = 1000; //sets the default value to 1000
+       }
+       else //otherwise sets the numberOfProducts to p
+       {
+           numberOfProducts = p;
+       }
+
+       setName(n); //sets the parameter of setName to n
+       if (l*w <= 0) //error traps if the area is less than or equal to 0
+       {
+           System.out.println ("Invalid area. Area set to 500.0m2.");
+           setArea(50.0, 10.0); //sets the default value to 50.0 and 10.0
+       }
+       else //otherwise sets the parameter of setArea to l and w
+       {
+           setArea(l,w);
+       }
+       setConnected(c); // sets the parameter of setConnected to c
+       if (e <= 0) //error traps if the amount of employees is less than or equal to 0
+       {
+           System.out.println ("Invalid number of employees. Employees set to 5.");
+           setEmployees(5); //sets the default value to 5
+       }
+       else //otherwise sets the parameter of setEmployees to e
+       {
+           setEmployees(e);
+       }
+       if (fn <= 0) //error traps if the amount of floors is less than or equal to 0
+       {
+           System.out.println ("Invalid number of floors. Floor number set to 1.");
+           setFloorNumber(1); //sets the default value to 1
+       }
+       else //otherwise sets the parameter of setFloorNumber to fn
+       {
+           setFloorNumber(fn);
+       }
+       setManager(m); // sets the parameter of setManager to m
+       if (cl>10||cl<=0) //error traps if the cleanliness levels is not between 1-10
+       {
+           System.out.println ("Number isn't 1-10. \"cleanliness\" is set to 8.");
+           setCleanliness(8);
+       }
+       else //otherwise sets the parameter of setCleanliness to cl
+       {
+           setCleanliness(cl);
+       }
+       if (ps < 0) //error message if the amount of parking spaces is less than 0
+       {
+           System.out.println ("Invalid number of parking spaces. Parking spaces  set to 3.");
+           setParkingSpaces(3); //sets the default value to 3
+       }
+       else //otherwise sets the parameter of setParkingSpaces to ps
+       {
+           setParkingSpaces(ps); 
+       }
+       setStreetLocation(sl); //sets the parameter of setStreetLocation to sl
+       if (r <= 0) //error message if the amount of registers is less than or equal to 0
+       {
+           System.out.println ("Invalid number of registers. Number of registers set to 2.");
+           setRegisters(2); //sets the default value to 2
+       }
+       else //otherwise sets the parameter of setRegisters to r
+       {
+           setRegisters(r); //sets the parameter of setRegisters to r
+       }
+       calcRevenue(in, out); //sets the parameter of calcRevenue to in and out
+   }
+  
+  public void setAisles (int a) //set method called setAisle that has an int parameter called a
+   {
+       if (a <= 0) //error message if the number of aisles is less than or equal to 0
+       {
+           System.out.println ("Please try again and enter a valid number of aisles.");
+       }
+       else  //otherwise sets the variable aisles to a
+       {
+           aisles = a;
+       }
+   }
+  
+   public void setFreezers (int f) //set method called setFreezers that has an int parameter called F
+   {
+       if (f <= 0) //error message if the number of freezers is less than or equal to 0
+       {
+           System.out.println ("Please try again and enter a valid number of freezers.");
+       }
+       else  //otherwise sets the variable freezers to f
+       {
+           freezers = f;
+       }
+   }
+  
+  public void setInventoryFull (int iF) //set method called setInventoryFull 
+  {
+    //if the number the user enters for the parameter iF is not between 1-10 then it will show an error message
+    if (iF>10||iF<=0)
+    {
+      System.out.println ("Please enter a number from 1 to 10 for how full the inventory is.");
+    }
+    else  //otherwise sets the variable inventoryFull to iF
+    {
+      inventoryFull = iF; 
+    }
+  }
+  
+  public void setFresh (int fr) //set method called setFresh 
+  {
+    //if the number the user enters for the parameter fr is not between 1-10 then it will show an error message
+    if (fr>10||fr<=0)
+    {
+      System.out.println ("Please enter a number from 1 to 10 for how full the inventory is");
+    }
+    else   //otherwise sets the variable fresh to fr
+    {
+      fresh = fr;
+    }
+  }
+  
+  public void setLiveAnimals (boolean lA) //set method called setLiveAnimals that has an boolean parameter called lA
+   {
+       liveAnimals= lA; //sets the variable liveAnimals to lA
+   }
+
+   public void setBakery (boolean b) //set method called setBakery that has an boolean parameter called b
+   {
+       bakery = b; //sets the variable bakery to b
+   }
+
+   public void setBestSeller (String bS) //set method called setBestSeller that has a String parameter called bS
+   {
+       bestSeller = bS; //sets the variable bestSeller to bS
+   }
+
+   public void setNumberOfProducts (int p) //set method called setNumberOfProducts that has an int parameter called P
+   {
+       if (p <= 0) //error message if the number of products is less than or equal to 0
+       {
+           System.out.println ("Please try again and enter a valid number of products.");
+       }
+       else //otherwise sets the variable numberOfProducts to p
+       {
+           numberOfProducts = p;
+       }
+   }
+  
+  public int getAisles () //get method called getAisles that returns an int
+  {
+    return (aisles); //returns the value of the variable aisles
+  }
+  
+  public int getFreezers () //get method called getFreezers that returns an int
+  {
+    return (freezers); //returns the value of the variable freezers
+  }
+  
+  public int getInventoryFull () //get method called getInventoryFull that returns an int
+  {
+    return (inventoryFull); //returns the value of the variable inventoryFull
+  }
+  
+  public int getFresh () //get method called getFresh that returns an int
+  {
+    return (fresh); //returns the value of the variable fresh
+  }
+  
+  public boolean getLiveAnimals () //get method called getLiveAnimals that returns a boolean
+  {
+    return (liveAnimals); //returns the value of the variable liveAnimals
+  }
+  
+  public boolean getBakery () //get method called getBakery that returns a boolean
+  {
+    return (bakery); //returns the value of the variable bakery
+  }
+  
+  public String getBestSeller () //get method called getBestSeller that returns a String
+  {
+    return (bestSeller); //returns the value of the variable bestSeller
+  }
+  
+  public int getNumberOfProducts () //get method called getNumberOfProducts that returns an int
+  {
+    return (numberOfProducts); //returns the value of the variable numberOfProducts
+  }
+  
+   public void stock (int p, int iF) //mutator method called stock that has two int parameters called p and iF
+   {
+       //error message if the amount of products to be decreased cannot be more than the number of products in the store
+      //error message also if the inventoryFull scale is not between 1-10
+       if ((p < numberOfProducts * -1)||(iF>10||iF<=0))
+       {
+           System.out.println ("Number of products is invalid and/or inventory fullness isn't 1-10. Try again.");
+       }
+       else 
+       {
+           numberOfProducts+=p; //adds p to the value of numberOfProducts
+           inventoryFull = iF; //adds iF to the value of inventoryFull
+       }
+   }
+  
+  public void addAisle (int a) //mutator method called addAisle with a parameter called a
+  {
+    //returns an error message if the value of the variable a is less than or equal to 0
+    if (a<=0)
+    {
+      System.out.println ("Please enter a valid number of aisles that you would like to add");
+    }
+    else //otherwise adds the value of a to aisles to get the number of aisles after they added a certain amount
+    {
+      aisles+=a;
+    }
+  }
+  
+  public void removeAisle (int a) //mutator method called removeAisle with a parameter called a
+  {
+    //returns an error message if the variable a(amount of aisles the stores wishes to remove) is greater than the amount of aisles they have
+    //also returns an error message if the value of the variable a is less than or equal to 0
+    if (a>aisles||a<=0)
+    {
+      System.out.println ("Please enter a valid number of aisles that you would like to remove.");
+    }
+    else //otherwise subtracts the value of a from the number of aisles
+    {
+      aisles-=a;
+    }
+  }
+  
+  public void addFreezer (int f) //mutator method called addFreezer with a parameter called f
+  {
+    //returns an error message if the value of the variable f is less than or equal to 0
+    if (f<=0)
+    {
+      System.out.println ("Please enter a valid number of freezers that you would like to add.");
+    }
+    else //otherwise adds the value of f to freezers to get the number of freezers the store would have after they added a certain amount
+    {
+      freezers+=f;
+    }
+  }
+  
+  public void removeFreezer (int f) //mutator method called removeFreezer with a parameter called f
+  {
+    //returns an error message if the variable f(amount of freezers the stores wishes to remove) is greater than the amount of freezers they have
+    //also returns an error message if the value of the variable f is less than or equal to 0
+    if (f>freezers||f<=0)
+    {
+      System.out.println ("Please enter a valid number of freezers that you would like to remove.");
+    }
+    else //otherwise subtracts the value of f from the number of freezers
+    {
+      freezers-=f;
+    }
+  } 
+}

@@ -1,0 +1,312 @@
+public class Store //class called Store
+{
+  //instance variable declaration statements
+  private String name;
+  private double area;
+  private boolean connected;
+  private int employees;
+  private int floorNumber;
+  private String manager;
+  private int cleanliness;
+  private int parkingSpaces;
+  private String streetLocation;
+  private int registers;
+  private double revenue;
+  
+  public Store () //first constructor with no parameters
+  {
+    name="Shopify"; //sets the variable name to a default value of Shopify
+    area=6650.5; //sets the variable area to a default value of 6650.5
+    connected=false; //sets the variable connected to a default value of false
+    employees=15; //sets the variable employees to a default value of 15
+    floorNumber=1; //sets the variable floorNumber to a default value of 1
+    manager="Stacey"; //sets the variable manager to a default value of Stacey
+    cleanliness=7; //sets the variable cleanliness to a default value of 7
+    parkingSpaces=50; //sets the variable parkingSpaces to a default value of 50
+    streetLocation="Bathurst Street"; //sets the variable streetLocation to a default value of Bathurst Street
+    registers=4; //sets the variable registers to a default value of 4
+    revenue=500000.0; //sets the variable revenue to a default value of 500000.0
+    
+  }
+  
+  public Store (String n, double a, boolean c,int e, int fn, String m, int cl, int ps, String sl, int r, double re) //constructor with all the corresponding variable values as parameters
+  {
+    name=n; //sets the variable name to the parameter n
+    area=a; //sets the variable area to the parameter a
+    connected=c; //sets the variable connected to the parameter c
+    employees=e; //sets the variable employees to the parameter e
+    floorNumber=fn; //sets the variable floorNumber to the parameter fn
+    manager=m; //sets the variable manager to the parameter m
+    cleanliness=cl; //sets the variable cleanliness to the parameter cl
+    parkingSpaces=ps; //sets the variable parkingSpaces to the parameter ps
+    streetLocation=sl; //sets the variable streetLocation to the parameter sl
+    registers=r; //sets the variable registers to the parameter r
+    revenue=re; //sets the variable revenue to the parameter re
+  }
+  
+  public Store (String n, double a, boolean c,int e, int fn, String m, int cl, int ps, String sl, int r, double re) //constructor with all the corresponding variable values as parameters
+   {
+       name=n; //sets the variable name to the parameter n
+       if (a <= 0) //error traps if area is set to less than or equal to 0 
+       {
+           System.out.println ("Invalid area. Area set to 500.");
+           area = 500.0; //sets it to a default value of 500
+       }
+       else //otherwise sets the variable area to a
+       {
+           area = a;
+       }
+       connected=c; //sets the variable connected to c
+       if (e <= 0) //if the user enters the number of employees as less than or equal to 0, the program gives and error message
+       {
+           System.out.println ("Invalid number of employees. Employees set to 5.");
+           employees = 5; //sets the numbers of employees to 5 as the default value
+       }
+       else //otherwise sets the variable employees to e
+       {
+           employees = e;
+       }
+       if (fn <= 0) //if the user enters the number of floors as less than or equal to 0, the program gives an error message
+       {
+           System.out.println ("Invalid number of floors. Floor number set to 1.");
+           floorNumber=1; //sets the numbers of floors to 1 as the default value
+       }
+       else //otherwise sets the variable floorNumber to fn
+       {
+           floorNumber=fn;
+       }
+       manager=m; //sets the variable manager to m
+       if (cl>10||cl<=0) //error traps if the value of cleanliness is not between 1 and 10. 
+       {
+           System.out.println ("Number isn't 1-10. \"cleanliness\" is set to 8.");
+           cleanliness = 8; //sets the numbers of cleanliness to 8 as the default value 
+       }
+       else //otherwise sets the variable cleanliness to cl
+       {
+           cleanliness = cl;
+       }
+       if (ps <= 0) //error traps if area is set to less than or equal to 0 
+       {
+           System.out.println ("Invalid number of parking spaces. Parking spaces  set to 3.");
+           parkingSpaces=3; //sets the numbers of parkingSpaces to 3 as the default value
+       }
+       else //otherwise sets the variable parkingSpaces to ps
+       {
+           parkingSpaces=ps;
+       }
+       streetLocation=sl; //sets the variable streetLocation to sl
+       if (r <= 0) //error traps if area is set to less than or equal to 0 
+       {
+           System.out.println ("Invalid number of registers. Number od registers set to 2.");
+           registers=2; //sets the numbers of registers to 2 as the default value
+       }
+       else //otherwise sets the variable registers to r
+       {
+           registers=r;
+       }
+       revenue=re; //sets the value of the registers to re
+   }
+   public void setName (String n) //set method called setName that has a String parameter called n
+   {
+       name = n;
+   }
+   public  void setArea (double l, double w) //set method called setArea that has two double parameters called l and w
+   {
+       if (l <= 0 || w <= 0) //error message if the user enters length or width as less then or equal to 0
+       {
+           System.out.println ("Please try again and enter valid numbers.");
+       }
+       else //otherwise calculates area
+       {
+           area = l*w;
+       }
+   }
+   public void setEmployees (int e) //set method called setEmployees that has an int parameter called e
+   {
+       if (e <= 0) //error message if user enters the number of employees to be less than or equal to 0
+       {
+           System.out.println ("Please try again and enter a valid number of employees.");
+       }
+       else //otherwise sets the variable employees to r
+       {
+           employees = e;
+       }
+   }
+   public void setConnected (boolean c) //set method called setConnected that has a boolean parameter called c
+   {
+       connected = c; //sets the variable connected to c
+   }
+
+   public void setFloorNumber (int fn) //set method called setFloorNumber that has an int parameter called fn
+   {
+       if (fn <= 0) //error message if user enters the number of floors to be less than or equal to 0
+       {
+           System.out.println ("Please try again and enter a valid number of floors.");
+       }
+       else //otherwise sets the variable floorNumber to fn
+       {
+           floorNumber = fn;
+       }
+
+   }
+
+   public void setManager (String m) //set method called setManager that has a String parameter called m
+   {
+       manager = m; //sets the variable manager to m
+   }
+
+   public void setCleanliness (int cl) //set method called setCleanliness that has an int parameter called cl
+   {
+       if (cl>10||cl<=0) //error message if user does not enter a number between 1-10 for cleanliness levels
+       {
+           System.out.println ("Number isn't 1-10. \"cleanliness\" value not changed. Try again.");
+       }
+       else //otherwise sets the variable cleanliness to cl
+       {
+           cleanliness = cl;
+       }
+   }
+
+   public void setParkingSpaces (int ps) //set method called setParkingSpaces that has an int parameter called ps
+   {
+       if (ps<0) //error message if user enters the number of parking spaces to be less than 0
+       {
+           System.out.println ("Please try again and enter a valid number of parking spaces.");
+       }
+       else //otherwise sets the variable parkingSpaces to ps
+       {
+           parkingSpaces = ps;
+       }
+   }
+
+   public void setStreetLocation (String sl) //set method called setStreetLocation that has a String parameter called sl
+   {
+       streetLocation = sl; //sets the variable streetLocation to sl
+   }
+
+   public void setRegisters (int r) //set method called setRegisters that has an int parameter called r
+   {
+       if (r<=0) //error message if user enters the number of registers to be less than or equal to 0
+       {
+           System.out.println ("Please try again and enter a valid number of registers.");
+       }
+       else //otherwise sets the variable registers to r
+       {
+           registers = r;
+       }
+   }
+  
+  public String getName () //get method called getName that returns a String
+  {
+    return (name); //returns the variable name
+  }
+  
+  public double getArea () //get method called getArea that returns a double
+  {
+    return (area); //returns the variable area
+  }
+  
+  public boolean getConnected () //get method called getConnected that returns a boolean
+  {
+    return (connected); //returns the variable connected
+  }
+  
+  public int getFloorNumber () //get method called getFloorNumber that returns an int
+  {
+    return (floorNumber); //returns the variable floorNumber
+  }
+  
+  public String getManager () //get method called getManager that returns a String
+  {
+    return (manager); //returns the variable manager
+  }
+  
+  public int getCleanliness () //get method called getCleanliness that returns an int
+  {
+    return (cleanliness); //returns the variable cleanliness
+  }
+  
+  public int getParkingSpaces () //get method called getParkingSpaces that returns an int
+  {
+    return (parkingSpaces); //returns the variable parkingSpaces
+  }
+  
+  public String getStreetLocation () //get method called getStreetLocation that returns a String
+  {
+    return (streetLocation); //returns the variable streetLocation
+  }
+  
+  public int getRegister () //get method called getRegister that returns an int
+  {
+    return (registers); //returns the variable registers
+  }
+  
+  public double getRevenue () //get method called getRevenue that returns a double
+  {
+    return (revenue); //returns the variable revenue
+  }
+  
+  public void fireEmployee (int e) //mutator method called fireEmployee which passes on a parameter called e 
+  {
+    //returns an error message if the variable e(amount of employees they wish to fire) is greater than the amount of employees they have
+    //returns an error message also if the value of the variable e is less than or equal to 0
+    if (e>employees || e<=0)
+    {
+      System.out.println ("Please enter a valid number of employees you would like to fire.");
+    }
+    else //otherwise subtracts the e from the variable employees to get the number of employees left after they fired a certain amount
+    {
+    employees-=e;
+    }
+  }
+  
+  public void hireEmployee (int e)//mutator method called hireEmployee which passes on a parameter called e 
+  {
+    //returns an error message if the value of the variable e is less than or equal to 0
+    if (e<=0)
+    {
+      System.out.println ("Please enter a valid number of employees you would like to hire.");
+    }
+    else //otherwise adds the value of e to employees to get the number of employees after they hired a certain amount
+    {
+    employees+=e; 
+    }
+  }
+  
+  public void hireNewManager (String m) //mutator method called hireNewManager with a parameter called m
+  {
+    manager=m; //sets the new managers name to the value of parameter m
+  }
+  
+  public void addRegister (int r) //mutator method called addRegister with a parameter called r
+  {
+    //returns an error message if the value of r is less than or equal to 0
+    if (r<=0)
+    {
+       System.out.println ("Please enter a valid number of registers you would like to add.");
+    }
+    else //otherwise adds the value of r to the number of registers
+    {
+    registers+=r;
+    }
+  }
+  
+  public void removeRegister (int r) //mutator method called removeRegister with a parameter called r
+  {
+    //returns an error message if the variable r(amount of registers they wish to remove) is greater than the amount of registers they have
+    //also returns an error message if the value of the variable r is less than or equal to 0
+    if (r>registers || r<=0)
+    {
+      System.out.println ("Please enter a valid number of registers you would like to remove."); 
+    }
+    else //otherwise subtracts the value of r from the number of registers
+    {
+      registers-=r;
+    }
+  }
+  
+  public void calcRevenue (double in, double out) //mutator method called calcRevenue with a parameters called in and out
+  {
+    revenue= in-out; //subtracts the value of the amount spent on products (out) from the value of the amount of money the store made (in) to get the revenue
+  }
+}

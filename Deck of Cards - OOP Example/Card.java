@@ -1,0 +1,36 @@
+/**
+ * this is the Card class
+ * @author Marina Semenova
+ * @version 1.1 April 24, 2019
+ */
+public class Card {
+    String myFace;
+    String mySuit;
+    /**
+     * this is the Card class constructor
+     * @param theFace face of the cards
+     * @param theSuit suit of the cards
+     */
+    public Card(String theFace, String theSuit) {
+        myFace = theFace;
+        mySuit = theSuit;
+    }
+    /**
+     * toString override method
+     * @return the face and the suit of the cards
+     */
+    public String toString() {
+        return myFace + " of " + mySuit;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
